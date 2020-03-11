@@ -165,7 +165,7 @@ def glue_convert_examples_to_features(
 
     return features
 
-ass BoolQProcessor(DataProcessor):
+class BoolqProcessor(DataProcessor):
     """Processor for the BoolQ data set (GLUE version)."""
 
     def get_example_from_tensor_dict(self, tensor_dict):
@@ -179,12 +179,22 @@ ass BoolQProcessor(DataProcessor):
 
     def get_train_examples(self, data_dir):
         """See base class."""
-        logger.info("LOOKING AT {}".format(os.path.join(data_dir, "train.tsv")))
-        return self._create_examples(self._read_tsv(os.path.join(data_dir, "train.tsv")), "train")
+        logger.info("LOOKING AT {}".format(os.path.join(data_dir, "train.jsonl")))
+        data = []
+        with open(os.path.join(data_dir, "train.jsonl")) as f:
+            for line in f: 
+                data.append(json.loads(line))
+        return self._create_examples(data, "train")
+       # return self._create_examples(self._read_tsv(os.path.join(data_dir, "train.jsonl")), "train")
 
     def get_dev_examples(self, data_dir):
         """See base class."""
-        return self._create_examples(self._read_tsv(os.path.join(data_dir, "dev.tsv")), "dev")
+        data2 = []
+        with open(os.path.join(data_dir, "dev.jsonl")) as f:
+            for line in f:
+                data2.append(json.loads(line))
+        return self._create_examples(data2, "dev")
+       # return self._create_examples(self._read_tsv(os.path.join(data_dir, "dev.jsonl")), "dev")
 
     def get_labels(self):
         """See base class."""
@@ -197,9 +207,9 @@ ass BoolQProcessor(DataProcessor):
             if i == 0:
                 continue
             guid = "%s-%s" % (set_type, i)
-            text_a = line[0]
-            text_b = line[1]
-            label = line[3]
+            text_a = line['question']
+            text_b = line['passage']
+            label = line['label']
             examples.append(InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
         return examples
 
@@ -563,9 +573,11 @@ glue_tasks_num_labels = {
     "qnli": 2,
     "rte": 2,
     "wnli": 2,
+    "boolq": 2,
 }
 
 glue_processors = {
+    "boolq": BoolqProcessor,
     "cola": ColaProcessor,
     "mnli": MnliProcessor,
     "mnli-mm": MnliMismatchedProcessor,
@@ -589,4 +601,5 @@ glue_output_modes = {
     "qnli": "classification",
     "rte": "classification",
     "wnli": "classification",
+    "boolq": "classification",
 }
