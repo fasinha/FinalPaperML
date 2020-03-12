@@ -12,12 +12,17 @@ module load gcc/6.3.0
 # Replace with your NetID
 NETID=fs45
 source activate /scratch/${NETID}/nlu/env
+TASK_NAME=boolq
+GLUE_DIR=/scratch/fs45/nlu/data
 
+#export PYTORCH_TRANSFORMERS_CACHE=/scratch/${NETID}/nlu/cache
+#conda install pytorch torchvision -c pytorch
 cd /scratch/${NETID}/nlu/code/transformers
 export PYTHONPATH=/scratch/${NETID}/nlu/code/transformers/src:$PYTHONPATH
-python ./examples/run_glue.py \
-    --model_type roberta-base \
-    --model_name_or_path bert-base-uncased \
+python -c "import torch"
+python /scratch/${NETID}/nlu/code/transformers/examples/run_glue.py \
+    --model_type roberta \
+    --model_name_or_path roberta-base \
     --task_name ${TASK_NAME} \
     --do_train \
     --do_eval \
