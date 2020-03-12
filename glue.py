@@ -17,6 +17,7 @@
 
 import logging
 import os
+import json
 
 from ...file_utils import is_tf_available
 from .utils import DataProcessor, InputExample, InputFeatures
@@ -90,7 +91,7 @@ def glue_convert_examples_to_features(
         if ex_index % 10000 == 0:
             logger.info("Writing example %d/%d" % (ex_index, len_examples))
 
-        inputs = tokenizer.encode_plus(example.text_a, example.text_b, add_special_tokens=True, max_length=max_length,)
+        inputs = tokenizer.encode_plus(example.text_a, example.text_b, add_special_tokens=True, max_length=max_length, return_token_type_ids=True)
         input_ids, token_type_ids = inputs["input_ids"], inputs["token_type_ids"]
 
         # The mask has 1 for real tokens and 0 for padding tokens. Only real
@@ -190,15 +191,15 @@ class BoolqProcessor(DataProcessor):
     def get_dev_examples(self, data_dir):
         """See base class."""
         data2 = []
-        with open(os.path.join(data_dir, "dev.jsonl")) as f:
+        with open(os.path.join(data_dir, "val.jsonl")) as f:
             for line in f:
                 data2.append(json.loads(line))
-        return self._create_examples(data2, "dev")
+        return self._create_examples(data2, "val")
        # return self._create_examples(self._read_tsv(os.path.join(data_dir, "dev.jsonl")), "dev")
 
     def get_labels(self):
         """See base class."""
-        return ["True", "False"]
+        return [True, False]
 
     def _create_examples(self, lines, set_type):
         """Creates examples for the training and dev sets."""
@@ -577,8 +578,8 @@ glue_tasks_num_labels = {
 }
 
 glue_processors = {
-    "boolq": BoolqProcessor,
     "cola": ColaProcessor,
+    "boolq": BoolqProcessor,
     "mnli": MnliProcessor,
     "mnli-mm": MnliMismatchedProcessor,
     "mrpc": MrpcProcessor,
