@@ -1,0 +1,158 @@
+04/21/2020 13:54:19 - WARNING - __main__ -   Process rank: -1, device: cuda, n_gpu: 1, distributed training: False, 16-bits training: False
+04/21/2020 13:54:19 - INFO - transformers.configuration_utils -   loading configuration file /scratch/fs45/nlu/blimp_round4/config.json
+04/21/2020 13:54:19 - INFO - transformers.configuration_utils -   Model config BertConfig {
+  "_num_labels": 2,
+  "architectures": [
+    "BertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": null,
+  "do_sample": false,
+  "early_stopping": false,
+  "eos_token_ids": null,
+  "finetuning_task": "blimptask",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_beams": 1,
+  "num_hidden_layers": 12,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": null,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 30522
+}
+
+04/21/2020 13:54:19 - INFO - transformers.tokenization_utils -   Model name '/scratch/fs45/nlu/blimp_round4' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased, bert-base-finnish-cased-v1, bert-base-finnish-uncased-v1, bert-base-dutch-cased). Assuming '/scratch/fs45/nlu/blimp_round4' is a path, a model identifier, or url to a directory containing tokenizer files.
+04/21/2020 13:54:19 - INFO - transformers.tokenization_utils -   Didn't find file /scratch/fs45/nlu/blimp_round4/added_tokens.json. We won't load it.
+04/21/2020 13:54:19 - INFO - transformers.tokenization_utils -   loading file /scratch/fs45/nlu/blimp_round4/vocab.txt
+04/21/2020 13:54:19 - INFO - transformers.tokenization_utils -   loading file None
+04/21/2020 13:54:19 - INFO - transformers.tokenization_utils -   loading file /scratch/fs45/nlu/blimp_round4/special_tokens_map.json
+04/21/2020 13:54:19 - INFO - transformers.tokenization_utils -   loading file /scratch/fs45/nlu/blimp_round4/tokenizer_config.json
+04/21/2020 13:54:20 - INFO - transformers.modeling_utils -   loading weights file /scratch/fs45/nlu/blimp_round4/pytorch_model.bin
+04/21/2020 13:54:25 - INFO - __main__ -   Training/evaluation parameters Namespace(adam_epsilon=1e-08, cache_dir='', config_name='', data_dir='/scratch/fs45/nlu/data/blimp/data/blimptask', device=device(type='cuda'), do_eval=True, do_lower_case=False, do_train=False, eval_all_checkpoints=False, evaluate_during_training=False, fp16=False, fp16_opt_level='O1', gradient_accumulation_steps=1, learning_rate=2e-05, local_rank=-1, logging_steps=500, max_grad_norm=1.0, max_seq_length=128, max_steps=-1, model_name_or_path='/scratch/fs45/nlu/blimp_round4', model_type='bert', n_gpu=1, no_cuda=False, num_train_epochs=3.0, output_dir='/scratch/fs45/nlu/blimptask_run/', output_mode='classification', overwrite_cache=False, overwrite_output_dir=False, per_gpu_eval_batch_size=8, per_gpu_train_batch_size=8, save_steps=500, seed=42, server_ip='', server_port='', task_name='blimptask', tokenizer_name='', warmup_steps=0, weight_decay=0.0)
+04/21/2020 13:54:25 - INFO - transformers.tokenization_utils -   Model name '/scratch/fs45/nlu/blimptask_run/' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased, bert-base-finnish-cased-v1, bert-base-finnish-uncased-v1, bert-base-dutch-cased). Assuming '/scratch/fs45/nlu/blimptask_run/' is a path, a model identifier, or url to a directory containing tokenizer files.
+04/21/2020 13:54:25 - INFO - transformers.tokenization_utils -   Didn't find file /scratch/fs45/nlu/blimptask_run/added_tokens.json. We won't load it.
+04/21/2020 13:54:25 - INFO - transformers.tokenization_utils -   loading file /scratch/fs45/nlu/blimptask_run/vocab.txt
+04/21/2020 13:54:25 - INFO - transformers.tokenization_utils -   loading file None
+04/21/2020 13:54:25 - INFO - transformers.tokenization_utils -   loading file /scratch/fs45/nlu/blimptask_run/special_tokens_map.json
+04/21/2020 13:54:25 - INFO - transformers.tokenization_utils -   loading file /scratch/fs45/nlu/blimptask_run/tokenizer_config.json
+04/21/2020 13:54:25 - INFO - __main__ -   Evaluate the following checkpoints: ['/scratch/fs45/nlu/blimptask_run/']
+04/21/2020 13:54:25 - INFO - transformers.configuration_utils -   loading configuration file /scratch/fs45/nlu/blimptask_run/config.json
+04/21/2020 13:54:25 - INFO - transformers.configuration_utils -   Model config BertConfig {
+  "_num_labels": 2,
+  "architectures": [
+    "BertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": null,
+  "do_sample": false,
+  "early_stopping": false,
+  "eos_token_ids": null,
+  "finetuning_task": "blimptask",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "is_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_beams": 1,
+  "num_hidden_layers": 12,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": null,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 30522
+}
+
+04/21/2020 13:54:25 - INFO - transformers.modeling_utils -   loading weights file /scratch/fs45/nlu/blimptask_run/pytorch_model.bin
+04/21/2020 13:54:27 - INFO - __main__ -   Creating features from dataset file at /scratch/fs45/nlu/data/blimp/data/blimptask
+04/21/2020 13:54:27 - INFO - __main__ -   label list: 
+04/21/2020 13:54:27 - INFO - __main__ -   ['0', '1']
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   Writing example 0/10000
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   *** Example ***
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   guid: dev-1
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   input_ids: 101 100 14091 2040 1037 2843 1997 6368 2008 2020 11228 2075 2116 2111 17612 2055 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   label: 1 (id = 1)
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   *** Example ***
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   guid: dev-2
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   input_ids: 101 100 14091 2008 1037 2843 1997 6368 2008 2020 11228 2075 2116 2111 17612 2055 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   label: 0 (id = 0)
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   *** Example ***
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   guid: dev-3
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   input_ids: 101 100 2106 2424 2041 2054 2296 5356 3771 2008 2323 1050 1005 1056 4392 5078 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   label: 1 (id = 1)
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   *** Example ***
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   guid: dev-4
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   input_ids: 101 100 2106 2424 2041 2008 2296 5356 3771 2008 2323 1050 1005 1056 4392 5078 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   label: 0 (id = 0)
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   *** Example ***
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   guid: dev-5
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   input_ids: 101 100 100 2031 1050 1005 1056 6618 2041 2054 18149 2015 2008 2031 17733 100 2298 2066 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+04/21/2020 13:54:28 - INFO - transformers.data.processors.glue -   label: 1 (id = 1)
+04/21/2020 13:54:30 - INFO - __main__ -   Saving features into cached file /scratch/fs45/nlu/data/blimp/data/blimptask/cached_dev_blimp_round4_128_blimptask
+04/21/2020 13:54:31 - INFO - __main__ -   ***** Running evaluation  *****
+04/21/2020 13:54:31 - INFO - __main__ -     Num examples = 10000
+04/21/2020 13:54:31 - INFO - __main__ -     Batch size = 8
+Evaluating:   0%|          | 0/1250 [00:00<?, ?it/s]Evaluating:   0%|          | 1/1250 [00:00<04:49,  4.32it/s]Evaluating:   0%|          | 6/1250 [00:00<03:29,  5.93it/s]Evaluating:   1%|          | 11/1250 [00:00<02:33,  8.06it/s]Evaluating:   1%|▏         | 16/1250 [00:00<01:54, 10.76it/s]Evaluating:   2%|▏         | 21/1250 [00:00<01:27, 14.07it/s]Evaluating:   2%|▏         | 26/1250 [00:00<01:08, 17.93it/s]Evaluating:   3%|▎         | 32/1250 [00:00<00:54, 22.21it/s]Evaluating:   3%|▎         | 37/1250 [00:00<00:45, 26.62it/s]Evaluating:   3%|▎         | 42/1250 [00:01<00:39, 30.95it/s]Evaluating:   4%|▍         | 47/1250 [00:01<00:34, 34.92it/s]Evaluating:   4%|▍         | 52/1250 [00:01<00:31, 38.35it/s]Evaluating:   5%|▍         | 57/1250 [00:01<00:28, 41.21it/s]Evaluating:   5%|▍         | 62/1250 [00:01<00:27, 43.44it/s]Evaluating:   5%|▌         | 67/1250 [00:01<00:26, 45.19it/s]Evaluating:   6%|▌         | 72/1250 [00:01<00:25, 46.40it/s]Evaluating:   6%|▌         | 77/1250 [00:01<00:24, 47.37it/s]Evaluating:   7%|▋         | 82/1250 [00:01<00:24, 48.02it/s]Evaluating:   7%|▋         | 87/1250 [00:01<00:24, 48.33it/s]Evaluating:   7%|▋         | 92/1250 [00:02<00:23, 48.73it/s]Evaluating:   8%|▊         | 97/1250 [00:02<00:23, 48.94it/s]Evaluating:   8%|▊         | 102/1250 [00:02<00:23, 49.00it/s]Evaluating:   9%|▊         | 107/1250 [00:02<00:23, 49.11it/s]Evaluating:   9%|▉         | 112/1250 [00:02<00:23, 49.24it/s]Evaluating:   9%|▉         | 117/1250 [00:02<00:23, 49.25it/s]Evaluating:  10%|▉         | 122/1250 [00:02<00:22, 49.22it/s]Evaluating:  10%|█         | 127/1250 [00:02<00:22, 49.31it/s]Evaluating:  11%|█         | 132/1250 [00:02<00:22, 49.43it/s]Evaluating:  11%|█         | 137/1250 [00:02<00:22, 49.41it/s]Evaluating:  11%|█▏        | 142/1250 [00:03<00:22, 49.47it/s]Evaluating:  12%|█▏        | 147/1250 [00:03<00:22, 49.38it/s]Evaluating:  12%|█▏        | 152/1250 [00:03<00:22, 49.29it/s]Evaluating:  13%|█▎        | 157/1250 [00:03<00:22, 49.28it/s]Evaluating:  13%|█▎        | 162/1250 [00:03<00:22, 49.40it/s]Evaluating:  13%|█▎        | 167/1250 [00:03<00:21, 49.43it/s]Evaluating:  14%|█▍        | 172/1250 [00:03<00:21, 49.49it/s]Evaluating:  14%|█▍        | 177/1250 [00:03<00:21, 49.49it/s]Evaluating:  15%|█▍        | 182/1250 [00:03<00:21, 49.56it/s]Evaluating:  15%|█▍        | 187/1250 [00:03<00:21, 49.41it/s]Evaluating:  15%|█▌        | 192/1250 [00:04<00:21, 49.51it/s]Evaluating:  16%|█▌        | 197/1250 [00:04<00:21, 49.49it/s]Evaluating:  16%|█▌        | 202/1250 [00:04<00:21, 49.37it/s]Evaluating:  17%|█▋        | 207/1250 [00:04<00:21, 49.35it/s]Evaluating:  17%|█▋        | 212/1250 [00:04<00:20, 49.44it/s]Evaluating:  17%|█▋        | 217/1250 [00:04<00:20, 49.36it/s]Evaluating:  18%|█▊        | 222/1250 [00:04<00:20, 49.42it/s]Evaluating:  18%|█▊        | 227/1250 [00:04<00:20, 49.49it/s]Evaluating:  19%|█▊        | 232/1250 [00:04<00:20, 49.51it/s]Evaluating:  19%|█▉        | 237/1250 [00:05<00:20, 49.45it/s]Evaluating:  19%|█▉        | 242/1250 [00:05<00:20, 49.54it/s]Evaluating:  20%|█▉        | 247/1250 [00:05<00:20, 49.57it/s]Evaluating:  20%|██        | 252/1250 [00:05<00:20, 49.60it/s]Evaluating:  21%|██        | 257/1250 [00:05<00:19, 49.65it/s]Evaluating:  21%|██        | 262/1250 [00:05<00:19, 49.63it/s]Evaluating:  21%|██▏       | 267/1250 [00:05<00:19, 49.45it/s]Evaluating:  22%|██▏       | 272/1250 [00:05<00:19, 49.37it/s]Evaluating:  22%|██▏       | 277/1250 [00:05<00:19, 49.32it/s]Evaluating:  23%|██▎       | 282/1250 [00:05<00:19, 49.39it/s]Evaluating:  23%|██▎       | 287/1250 [00:06<00:19, 49.39it/s]Evaluating:  23%|██▎       | 292/1250 [00:06<00:19, 49.46it/s]Evaluating:  24%|██▍       | 297/1250 [00:06<00:19, 49.43it/s]Evaluating:  24%|██▍       | 302/1250 [00:06<00:19, 49.31it/s]Evaluating:  25%|██▍       | 307/1250 [00:06<00:19, 49.29it/s]Evaluating:  25%|██▍       | 312/1250 [00:06<00:19, 49.31it/s]Evaluating:  25%|██▌       | 317/1250 [00:06<00:18, 49.32it/s]Evaluating:  26%|██▌       | 322/1250 [00:06<00:18, 49.33it/s]Evaluating:  26%|██▌       | 327/1250 [00:06<00:18, 49.38it/s]Evaluating:  27%|██▋       | 332/1250 [00:06<00:18, 49.36it/s]Evaluating:  27%|██▋       | 337/1250 [00:07<00:18, 49.14it/s]Evaluating:  27%|██▋       | 342/1250 [00:07<00:18, 49.18it/s]Evaluating:  28%|██▊       | 347/1250 [00:07<00:18, 49.16it/s]Evaluating:  28%|██▊       | 352/1250 [00:07<00:18, 49.22it/s]Evaluating:  29%|██▊       | 357/1250 [00:07<00:18, 49.21it/s]Evaluating:  29%|██▉       | 362/1250 [00:07<00:18, 49.32it/s]Evaluating:  29%|██▉       | 367/1250 [00:07<00:17, 49.35it/s]Evaluating:  30%|██▉       | 372/1250 [00:07<00:17, 49.28it/s]Evaluating:  30%|███       | 377/1250 [00:07<00:17, 49.22it/s]Evaluating:  31%|███       | 382/1250 [00:07<00:17, 49.31it/s]Evaluating:  31%|███       | 387/1250 [00:08<00:17, 49.37it/s]Evaluating:  31%|███▏      | 392/1250 [00:08<00:17, 49.49it/s]Evaluating:  32%|███▏      | 397/1250 [00:08<00:17, 49.45it/s]Evaluating:  32%|███▏      | 402/1250 [00:08<00:17, 49.53it/s]Evaluating:  33%|███▎      | 407/1250 [00:08<00:17, 49.56it/s]Evaluating:  33%|███▎      | 412/1250 [00:08<00:16, 49.64it/s]Evaluating:  33%|███▎      | 417/1250 [00:08<00:16, 49.68it/s]Evaluating:  34%|███▍      | 422/1250 [00:08<00:16, 49.71it/s]Evaluating:  34%|███▍      | 427/1250 [00:08<00:16, 49.73it/s]Evaluating:  35%|███▍      | 432/1250 [00:08<00:16, 49.71it/s]Evaluating:  35%|███▍      | 437/1250 [00:09<00:16, 49.47it/s]Evaluating:  35%|███▌      | 442/1250 [00:09<00:16, 49.55it/s]Evaluating:  36%|███▌      | 447/1250 [00:09<00:16, 49.61it/s]Evaluating:  36%|███▌      | 452/1250 [00:09<00:16, 49.67it/s]Evaluating:  37%|███▋      | 457/1250 [00:09<00:15, 49.69it/s]Evaluating:  37%|███▋      | 462/1250 [00:09<00:15, 49.74it/s]Evaluating:  37%|███▋      | 467/1250 [00:09<00:15, 49.78it/s]Evaluating:  38%|███▊      | 472/1250 [00:09<00:15, 49.76it/s]Evaluating:  38%|███▊      | 477/1250 [00:09<00:15, 49.80it/s]Evaluating:  39%|███▊      | 482/1250 [00:09<00:15, 49.77it/s]Evaluating:  39%|███▉      | 487/1250 [00:10<00:15, 49.66it/s]Evaluating:  39%|███▉      | 492/1250 [00:10<00:15, 49.76it/s]Evaluating:  40%|███▉      | 497/1250 [00:10<00:15, 49.80it/s]Evaluating:  40%|████      | 502/1250 [00:10<00:15, 49.77it/s]Evaluating:  41%|████      | 507/1250 [00:10<00:14, 49.77it/s]Evaluating:  41%|████      | 512/1250 [00:10<00:14, 49.80it/s]Evaluating:  41%|████▏     | 517/1250 [00:10<00:14, 49.75it/s]Evaluating:  42%|████▏     | 522/1250 [00:10<00:14, 49.77it/s]Evaluating:  42%|████▏     | 527/1250 [00:10<00:14, 49.77it/s]Evaluating:  43%|████▎     | 532/1250 [00:10<00:14, 49.80it/s]Evaluating:  43%|████▎     | 537/1250 [00:11<00:14, 49.68it/s]Evaluating:  43%|████▎     | 542/1250 [00:11<00:14, 49.72it/s]Evaluating:  44%|████▍     | 547/1250 [00:11<00:14, 49.80it/s]Evaluating:  44%|████▍     | 553/1250 [00:11<00:13, 49.86it/s]Evaluating:  45%|████▍     | 558/1250 [00:11<00:13, 49.87it/s]Evaluating:  45%|████▌     | 564/1250 [00:11<00:13, 49.92it/s]Evaluating:  46%|████▌     | 569/1250 [00:11<00:13, 49.93it/s]Evaluating:  46%|████▌     | 574/1250 [00:11<00:13, 49.91it/s]Evaluating:  46%|████▋     | 579/1250 [00:11<00:13, 49.93it/s]Evaluating:  47%|████▋     | 584/1250 [00:12<00:13, 49.78it/s]Evaluating:  47%|████▋     | 589/1250 [00:12<00:13, 49.79it/s]Evaluating:  48%|████▊     | 594/1250 [00:12<00:13, 49.79it/s]Evaluating:  48%|████▊     | 599/1250 [00:12<00:13, 49.81it/s]Evaluating:  48%|████▊     | 604/1250 [00:12<00:12, 49.84it/s]Evaluating:  49%|████▊     | 609/1250 [00:12<00:12, 49.87it/s]Evaluating:  49%|████▉     | 614/1250 [00:12<00:12, 49.88it/s]Evaluating:  50%|████▉     | 620/1250 [00:12<00:12, 49.93it/s]Evaluating:  50%|█████     | 626/1250 [00:12<00:12, 49.96it/s]Evaluating:  50%|█████     | 631/1250 [00:12<00:12, 49.95it/s]Evaluating:  51%|█████     | 636/1250 [00:13<00:12, 49.87it/s]Evaluating:  51%|█████▏    | 641/1250 [00:13<00:12, 49.84it/s]Evaluating:  52%|█████▏    | 646/1250 [00:13<00:12, 49.88it/s]Evaluating:  52%|█████▏    | 651/1250 [00:13<00:12, 49.90it/s]Evaluating:  53%|█████▎    | 657/1250 [00:13<00:11, 49.94it/s]Evaluating:  53%|█████▎    | 662/1250 [00:13<00:11, 49.94it/s]Evaluating:  53%|█████▎    | 667/1250 [00:13<00:11, 49.94it/s]Evaluating:  54%|█████▍    | 672/1250 [00:13<00:11, 49.91it/s]Evaluating:  54%|█████▍    | 677/1250 [00:13<00:11, 49.90it/s]Evaluating:  55%|█████▍    | 682/1250 [00:13<00:11, 49.90it/s]Evaluating:  55%|█████▍    | 687/1250 [00:14<00:11, 49.78it/s]Evaluating:  55%|█████▌    | 692/1250 [00:14<00:11, 49.82it/s]Evaluating:  56%|█████▌    | 697/1250 [00:14<00:11, 49.84it/s]Evaluating:  56%|█████▌    | 702/1250 [00:14<00:10, 49.83it/s]Evaluating:  57%|█████▋    | 707/1250 [00:14<00:10, 49.81it/s]Evaluating:  57%|█████▋    | 712/1250 [00:14<00:10, 49.84it/s]Evaluating:  57%|█████▋    | 717/1250 [00:14<00:10, 49.78it/s]Evaluating:  58%|█████▊    | 722/1250 [00:14<00:10, 49.74it/s]Evaluating:  58%|█████▊    | 727/1250 [00:14<00:10, 49.69it/s]Evaluating:  59%|█████▊    | 732/1250 [00:14<00:10, 49.65it/s]Evaluating:  59%|█████▉    | 737/1250 [00:15<00:10, 49.59it/s]Evaluating:  59%|█████▉    | 742/1250 [00:15<00:10, 49.60it/s]Evaluating:  60%|█████▉    | 747/1250 [00:15<00:10, 49.66it/s]Evaluating:  60%|██████    | 752/1250 [00:15<00:10, 49.56it/s]Evaluating:  61%|██████    | 757/1250 [00:15<00:09, 49.55it/s]Evaluating:  61%|██████    | 762/1250 [00:15<00:09, 49.55it/s]Evaluating:  61%|██████▏   | 767/1250 [00:15<00:09, 49.62it/s]Evaluating:  62%|██████▏   | 772/1250 [00:15<00:09, 49.65it/s]Evaluating:  62%|██████▏   | 777/1250 [00:15<00:09, 49.72it/s]Evaluating:  63%|██████▎   | 782/1250 [00:15<00:09, 49.57it/s]Evaluating:  63%|██████▎   | 787/1250 [00:16<00:09, 49.41it/s]Evaluating:  63%|██████▎   | 792/1250 [00:16<00:09, 49.56it/s]Evaluating:  64%|██████▍   | 797/1250 [00:16<00:09, 49.66it/s]Evaluating:  64%|██████▍   | 802/1250 [00:16<00:09, 49.75it/s]Evaluating:  65%|██████▍   | 808/1250 [00:16<00:08, 49.83it/s]Evaluating:  65%|██████▌   | 813/1250 [00:16<00:08, 49.88it/s]Evaluating:  65%|██████▌   | 818/1250 [00:16<00:08, 49.89it/s]Evaluating:  66%|██████▌   | 823/1250 [00:16<00:08, 49.88it/s]Evaluating:  66%|██████▌   | 828/1250 [00:16<00:08, 49.87it/s]Evaluating:  67%|██████▋   | 833/1250 [00:17<00:08, 49.78it/s]Evaluating:  67%|██████▋   | 838/1250 [00:17<00:08, 49.80it/s]Evaluating:  67%|██████▋   | 843/1250 [00:17<00:08, 49.77it/s]Evaluating:  68%|██████▊   | 848/1250 [00:17<00:08, 49.73it/s]Evaluating:  68%|██████▊   | 853/1250 [00:17<00:07, 49.75it/s]Evaluating:  69%|██████▊   | 859/1250 [00:17<00:07, 49.82it/s]Evaluating:  69%|██████▉   | 864/1250 [00:17<00:07, 49.79it/s]Evaluating:  70%|██████▉   | 869/1250 [00:17<00:07, 49.75it/s]Evaluating:  70%|██████▉   | 874/1250 [00:17<00:07, 49.80it/s]Evaluating:  70%|███████   | 879/1250 [00:17<00:07, 49.81it/s]Evaluating:  71%|███████   | 884/1250 [00:18<00:07, 49.77it/s]Evaluating:  71%|███████   | 889/1250 [00:18<00:07, 49.82it/s]Evaluating:  72%|███████▏  | 894/1250 [00:18<00:07, 49.81it/s]Evaluating:  72%|███████▏  | 899/1250 [00:18<00:07, 49.84it/s]Evaluating:  72%|███████▏  | 904/1250 [00:18<00:06, 49.88it/s]Evaluating:  73%|███████▎  | 909/1250 [00:18<00:06, 49.86it/s]Evaluating:  73%|███████▎  | 914/1250 [00:18<00:06, 49.84it/s]Evaluating:  74%|███████▎  | 919/1250 [00:18<00:06, 49.87it/s]Evaluating:  74%|███████▍  | 924/1250 [00:18<00:06, 49.87it/s]Evaluating:  74%|███████▍  | 929/1250 [00:18<00:06, 49.88it/s]Evaluating:  75%|███████▍  | 934/1250 [00:19<00:06, 49.64it/s]Evaluating:  75%|███████▌  | 939/1250 [00:19<00:06, 49.50it/s]Evaluating:  76%|███████▌  | 944/1250 [00:19<00:06, 49.23it/s]Evaluating:  76%|███████▌  | 949/1250 [00:19<00:06, 49.15it/s]Evaluating:  76%|███████▋  | 954/1250 [00:19<00:06, 49.03it/s]Evaluating:  77%|███████▋  | 959/1250 [00:19<00:05, 48.95it/s]Evaluating:  77%|███████▋  | 964/1250 [00:19<00:05, 48.91it/s]Evaluating:  78%|███████▊  | 969/1250 [00:19<00:05, 48.94it/s]Evaluating:  78%|███████▊  | 974/1250 [00:19<00:05, 48.96it/s]Evaluating:  78%|███████▊  | 979/1250 [00:19<00:05, 48.97it/s]Evaluating:  79%|███████▊  | 984/1250 [00:20<00:05, 48.91it/s]Evaluating:  79%|███████▉  | 989/1250 [00:20<00:05, 49.06it/s]Evaluating:  80%|███████▉  | 994/1250 [00:20<00:05, 49.25it/s]Evaluating:  80%|███████▉  | 999/1250 [00:20<00:05, 49.23it/s]Evaluating:  80%|████████  | 1004/1250 [00:20<00:04, 49.36it/s]Evaluating:  81%|████████  | 1009/1250 [00:20<00:04, 49.51it/s]Evaluating:  81%|████████  | 1014/1250 [00:20<00:04, 49.47it/s]Evaluating:  82%|████████▏ | 1019/1250 [00:20<00:04, 49.42it/s]Evaluating:  82%|████████▏ | 1024/1250 [00:20<00:04, 49.22it/s]Evaluating:  82%|████████▏ | 1029/1250 [00:20<00:04, 48.96it/s]Evaluating:  83%|████████▎ | 1034/1250 [00:21<00:04, 48.84it/s]Evaluating:  83%|████████▎ | 1039/1250 [00:21<00:04, 48.82it/s]Evaluating:  84%|████████▎ | 1044/1250 [00:21<00:04, 48.86it/s]Evaluating:  84%|████████▍ | 1049/1250 [00:21<00:04, 48.95it/s]Evaluating:  84%|████████▍ | 1054/1250 [00:21<00:03, 49.07it/s]Evaluating:  85%|████████▍ | 1059/1250 [00:21<00:03, 49.17it/s]Evaluating:  85%|████████▌ | 1064/1250 [00:21<00:03, 49.29it/s]Evaluating:  86%|████████▌ | 1069/1250 [00:21<00:03, 49.37it/s]Evaluating:  86%|████████▌ | 1074/1250 [00:21<00:03, 49.42it/s]Evaluating:  86%|████████▋ | 1079/1250 [00:21<00:03, 49.52it/s]Evaluating:  87%|████████▋ | 1084/1250 [00:22<00:03, 49.45it/s]Evaluating:  87%|████████▋ | 1089/1250 [00:22<00:03, 49.37it/s]Evaluating:  88%|████████▊ | 1094/1250 [00:22<00:03, 49.14it/s]Evaluating:  88%|████████▊ | 1099/1250 [00:22<00:03, 49.04it/s]Evaluating:  88%|████████▊ | 1104/1250 [00:22<00:02, 48.96it/s]Evaluating:  89%|████████▊ | 1109/1250 [00:22<00:02, 48.93it/s]Evaluating:  89%|████████▉ | 1114/1250 [00:22<00:02, 48.98it/s]Evaluating:  90%|████████▉ | 1119/1250 [00:22<00:02, 48.99it/s]Evaluating:  90%|████████▉ | 1124/1250 [00:22<00:02, 49.05it/s]Evaluating:  90%|█████████ | 1129/1250 [00:23<00:02, 49.03it/s]Evaluating:  91%|█████████ | 1134/1250 [00:23<00:02, 49.13it/s]Evaluating:  91%|█████████ | 1139/1250 [00:23<00:02, 49.17it/s]Evaluating:  92%|█████████▏| 1144/1250 [00:23<00:02, 49.31it/s]Evaluating:  92%|█████████▏| 1149/1250 [00:23<00:02, 49.31it/s]Evaluating:  92%|█████████▏| 1154/1250 [00:23<00:01, 49.25it/s]Evaluating:  93%|█████████▎| 1159/1250 [00:23<00:01, 49.26it/s]Evaluating:  93%|█████████▎| 1164/1250 [00:23<00:01, 49.32it/s]Evaluating:  94%|█████████▎| 1169/1250 [00:23<00:01, 49.36it/s]Evaluating:  94%|█████████▍| 1174/1250 [00:23<00:01, 49.47it/s]Evaluating:  94%|█████████▍| 1179/1250 [00:24<00:01, 49.42it/s]Evaluating:  95%|█████████▍| 1184/1250 [00:24<00:01, 49.48it/s]Evaluating:  95%|█████████▌| 1189/1250 [00:24<00:01, 49.53it/s]Evaluating:  96%|█████████▌| 1194/1250 [00:24<00:01, 49.53it/s]Evaluating:  96%|█████████▌| 1199/1250 [00:24<00:01, 49.35it/s]Evaluating:  96%|█████████▋| 1204/1250 [00:24<00:00, 49.14it/s]Evaluating:  97%|█████████▋| 1209/1250 [00:24<00:00, 48.97it/s]Evaluating:  97%|█████████▋| 1214/1250 [00:24<00:00, 48.97it/s]Evaluating:  98%|█████████▊| 1219/1250 [00:24<00:00, 48.94it/s]Evaluating:  98%|█████████▊| 1224/1250 [00:24<00:00, 48.94it/s]Evaluating:  98%|█████████▊| 1229/1250 [00:25<00:00, 48.90it/s]Evaluating:  99%|█████████▊| 1234/1250 [00:25<00:00, 49.05it/s]Evaluating:  99%|█████████▉| 1239/1250 [00:25<00:00, 49.19it/s]Evaluating: 100%|█████████▉| 1244/1250 [00:25<00:00, 49.33it/s]Evaluating: 100%|█████████▉| 1249/1250 [00:25<00:00, 49.47it/s]Evaluating: 100%|██████████| 1250/1250 [00:25<00:00, 49.10it/s]
+04/21/2020 13:54:57 - INFO - __main__ -   ***** Eval results  *****
+04/21/2020 13:54:57 - INFO - __main__ -     acc = 0.5022

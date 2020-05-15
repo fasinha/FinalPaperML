@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/scratch/fs45/nlu/code/transformers/examples/run_glue.py", line 702, in <module>
+    main()
+  File "/scratch/fs45/nlu/code/transformers/examples/run_glue.py", line 565, in main
+    args.output_dir
+ValueError: Output directory (/scratch/fs45/nlu/boolq_run/) already exists and is not empty. Use --overwrite_output_dir to overcome.

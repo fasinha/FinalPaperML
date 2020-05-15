@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'torch'
+Traceback (most recent call last):
+  File "/scratch/fs45/nlu/code/transformers/examples/run_glue.py", line 27, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'

@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/scratch/fs45/nlu/code/transformers/examples/run_glue.py", line 32, in <module>
+    from transformers import (
+  File "/scratch/fs45/nlu/code/transformers/src/transformers/__init__.py", line 42, in <module>
+    from .data import (
+  File "/scratch/fs45/nlu/code/transformers/src/transformers/data/__init__.py", line 5, in <module>
+    from .metrics import is_sklearn_available
+  File "/scratch/fs45/nlu/code/transformers/src/transformers/data/metrics/__init__.py", line 1
+    opyright 2018 The Google AI Language Team Authors and The HuggingFace Inc. team.
+                ^
+SyntaxError: invalid syntax

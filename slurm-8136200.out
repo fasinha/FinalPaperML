@@ -1,0 +1,19 @@
+03/11/2020 19:34:52 - WARNING - __main__ -   Process rank: -1, device: cuda, n_gpu: 1, distributed training: False, 16-bits training: False
+{'cola': <class 'transformers.data.processors.glue.ColaProcessor'>, 'boolq': <class 'transformers.data.processors.glue.BoolqProcessor'>, 'mnli': <class 'transformers.data.processors.glue.MnliProcessor'>, 'mnli-mm': <class 'transformers.data.processors.glue.MnliMismatchedProcessor'>, 'mrpc': <class 'transformers.data.processors.glue.MrpcProcessor'>, 'sst-2': <class 'transformers.data.processors.glue.Sst2Processor'>, 'sts-b': <class 'transformers.data.processors.glue.StsbProcessor'>, 'qqp': <class 'transformers.data.processors.glue.QqpProcessor'>, 'qnli': <class 'transformers.data.processors.glue.QnliProcessor'>, 'rte': <class 'transformers.data.processors.glue.RteProcessor'>, 'wnli': <class 'transformers.data.processors.glue.WnliProcessor'>}
+Traceback (most recent call last):
+  File "/scratch/fs45/nlu/code/transformers/src/transformers/configuration_utils.py", line 240, in get_config_dict
+    raise EnvironmentError
+OSError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/scratch/fs45/nlu/code/transformers/examples/run_glue.py", line 702, in <module>
+    main()
+  File "/scratch/fs45/nlu/code/transformers/examples/run_glue.py", line 627, in main
+    cache_dir=args.cache_dir if args.cache_dir else None,
+  File "/scratch/fs45/nlu/code/transformers/src/transformers/configuration_utils.py", line 189, in from_pretrained
+    config_dict, kwargs = cls.get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/scratch/fs45/nlu/code/transformers/src/transformers/configuration_utils.py", line 256, in get_config_dict
+    raise EnvironmentError(msg)
+OSError: Model name 'bert-base-uncased' was not found in model name list. We assumed 'https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-uncased/config.json' was a path, a model identifier, or url to a configuration file named config.json or a directory containing such a file but couldn't find any such file at this path or url.

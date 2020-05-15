@@ -1,0 +1,19 @@
+Solving environment: ...working... done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 4.5.11
+  latest version: 4.8.2
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+
+# All requested packages already installed.
+
+Traceback (most recent call last):
+  File "/scratch/fs45/nlu/code/transformers/examples/run_glue.py", line 27, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
