@@ -15,18 +15,17 @@ source activate /scratch/${NETID}/nlu/env
 TASK_NAME=blimptask
 #GLUE_DIR=/scratch/fs45/nlu/data
 
-BLIMP_DIR=/scratch/fs45/nlu/data/blimp/data/
+BLIMP_DIR=/scratch/fs45/nlu/data/blimp/data
 
 #export PYTORCH_TRANSFORMERS_CACHE=/scratch/${NETID}/nlu/cache
 #conda install pytorch torchvision -c pytorch
 cd /scratch/${NETID}/nlu/code/transformers
 export PYTHONPATH=/scratch/${NETID}/nlu/code/transformers/src:$PYTHONPATH
 python -c "import torch"
-python /scratch/${NETID}/nlu/code/transformers/examples/run_glue.py \
+python /scratch/${NETID}/nlu/code/transformers/examples/run_glue_test.py \
     --model_type bert \
     --model_name_or_path bert-large-cased \
     --task_name ${TASK_NAME} \
-    --do_train \
     --do_eval \
     --data_dir ${BLIMP_DIR}/${TASK_NAME} \
     --max_seq_length 128 \
