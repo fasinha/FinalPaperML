@@ -214,6 +214,42 @@ class BoolqProcessor(DataProcessor):
             examples.append(InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
         return examples
 
+class BlimpProcessor(DataProcessor):
+    """Processor for the BLIMP data set ."""
+
+    def get_example_from_tensor_dict(self, tensor_dict):
+        """See base class."""
+        return InputExample(
+            tensor_dict["label"].numpy(),
+            tensor_dict["sentence"].numpy().decode("utf-8"),
+        )
+
+    def get_train_examples(self, data_dir):
+        """See base class."""
+        #logger.info("LOOKING AT {}".format(os.path.join(data_dir, "island_ellipsis.txt")))
+        return self._create_examples(self._read_tsv(os.path.join(data_dir, "sub_verb_train.txt")), "train")
+
+    def get_dev_examples(self, data_dir):
+        """See base class."""
+        return self._create_examples(self._read_tsv(os.path.join(data_dir, "concat_raising.txt")), "dev")
+
+    def get_labels(self):
+        """See base class."""
+        return ["0", "1"]
+
+    def _create_examples(self, lines, set_type):
+        """Creates examples for the training and dev sets."""
+        examples = []
+        for (i, line) in enumerate(lines):
+            if i == 0:
+                continue
+            guid = "%s-%s" % (set_type, i)
+            text_a = line[1]
+            #text_b = line['passage']
+            label = line[0]
+            examples.append(InputExample(guid=guid, text_a=text_a, text_b=None, label=label))
+        return examples
+
 class MrpcProcessor(DataProcessor):
     """Processor for the MRPC data set (GLUE version)."""
 
@@ -575,6 +611,7 @@ glue_tasks_num_labels = {
     "rte": 2,
     "wnli": 2,
     "boolq": 2,
+    "blimptask": 2,
 }
 
 glue_processors = {
@@ -589,6 +626,7 @@ glue_processors = {
     "qnli": QnliProcessor,
     "rte": RteProcessor,
     "wnli": WnliProcessor,
+    "blimptask": BlimpProcessor,
 }
 
 glue_output_modes = {
@@ -603,4 +641,5 @@ glue_output_modes = {
     "rte": "classification",
     "wnli": "classification",
     "boolq": "classification",
+    "blimptask": "classification",
 }
